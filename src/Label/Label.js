@@ -1,6 +1,6 @@
 import {
-  basic_primary,
-  basic_base,
+  primary,
+  base,
 } from "@heejeong/foundation/src/color-semantic";
 import {
   typography_size_middle,
@@ -17,11 +17,11 @@ const Label = (props) => {
         margin: "100px auto",
         width: "130px",
         border: border_2px_solid,
-        background: basic_base,
+        background: base,
         borderRadius: border_radius_20px,
       }}
     >
-      <label style={{ color: basic_primary, fontSize: typography_size_middle }}>
+      <label style={{ color: primary, fontSize: typography_size_middle }}>
         {props.text || '디폴트'}
       </label>
     </div>
