@@ -11,7 +11,7 @@ const Card = (props) => {
         cursor: "pointer"
       }}
       >
-    <div style={{fontWeight: 'bold'}}>{ props.title }</div>
+    <div style={{fontWeight: 'bold', color: 'black'}}>{ props.title }</div>
       {props.children}
     </div>
   );
