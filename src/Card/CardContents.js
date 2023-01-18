@@ -38,9 +38,9 @@ const CardContents = (contents, handleChange, handleDeleteCard) => {
           padding: "1rem",
           width: "100%",
           backgroundColor: "transparent",
-          border: none,
-          resize: none,
-          outline: none,
+          border: "none",
+          resize: "none",
+          outline: "none",
         }}
         onChange={handleChange}
         autoComplete="false"
