@@ -62,7 +62,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@heejeong/foundation": "^1.0.7",
+    "@heejeong/foundation": "^1.0.35",
     "rollup": "^3.10.0"
   }
 }

@@ -1,30 +1,89 @@
-import {display_flex, direction_column} from '@heejeong/foundation/src/layout'
+import React from "react";
 import {
-  primary,
-  neutral,
+  base_color,
+  neutral_color,
+  primary_color,
+  testing_color,
+  second_color,
 } from "@heejeong/foundation/src/color-semantic";
 import {
-  fontWeight_bold,
-  border_radius_10px,
+  text_align_center,
+  font_size_middle,
+  font_size_large,
 } from "@heejeong/foundation/src/typography";
+import {
+  display_flex,
+  direction_column,
+} from "@heejeong/foundation/src/layout";
 
-const Card = (props) => {
+const Card = ({ idx1, status, handleCreateCard, children }) => {
+    const statusBgColor = (status) => {
+      if (status === "todo") {
+        return neutral_color;
+      }
+      if (status === "working") {
+        return primary_color;
+      }
+      if (status === "test") {
+        return testing_color;
+      }
+      if (status === "done") {
+        return second_color;
+      }
+    };
+
   return (
     <div
       style={{
-        padding: "10px",
-        display: display_flex,
-        flexDirection: direction_column,
-        gap: "10px",
-        backgroundColor: primary,
-        borderRadius: border_radius_10px,
-        cursor: "pointer",
+        flexGrow: "1",
+        alignSelf: "flex-start",
+        borderRadius: "25px",
+        minHeight: "200px",
+        minWidth: "280px",
+        margin: "1rem",
       }}
+      data-card-category={status}
     >
-      <div style={{ fontWeight: fontWeight_bold, color: neutral }}>
-        {props.title}
+      <div
+        style={{
+          textAlign: text_align_center,
+          margin: "10px",
+          padding: "10px",
+          color: "white",
+          fontSize: font_size_middle,
+          fontWeight: "bold",
+          borderRadius: "10px",
+          backgroundColor: statusBgColor(status) || "white",
+        }}
+      >
+        {status.toUpperCase()}
       </div>
-      {props.children}
+      <div
+        style={{
+          borderRadius: "25px",
+          minHeight: "100px",
+          margin: "10px",
+          backgroundColor: base_color,
+          boxShadow: "3px 3px 5px rgba(102, 136, 199, 0.1)",
+          minHeight: "30px !important",
+          margin: "10px",
+          textAlign: text_align_center,
+          fontSize: font_size_large,
+        }}
+        onClick={() => handleCreateCard(idx1)}
+      >
+        +
+      </div>
+      <section
+        style={{
+          display: display_flex,
+          flexDirection: direction_column,
+          justifyContent: "center",
+          paddingBottom: "200px",
+        }}
+      >
+        {children}
+      </section>
     </div>
   );
 };
