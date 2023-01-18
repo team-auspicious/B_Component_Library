@@ -8,7 +8,7 @@ import {
 } from "@heejeong/foundation/src/typography";
 import { float_right } from "@heejeong/foundation/src/layout";
 
-const CardContents = (contents, handleChange, handleDeleteCard) => {
+const CardContents = ({ contents, handleChange, handleDeleteCard }) => {
   return (
     <div
       style={{
@@ -40,7 +40,7 @@ const CardContents = (contents, handleChange, handleDeleteCard) => {
           backgroundColor: "transparent",
           border: "none",
           resize: "none",
-          outline: "none",
+          outline: "none"
         }}
         onChange={handleChange}
         autoComplete="false"
